@@ -12,7 +12,6 @@ function afficherPanier(p) {
 	total = 0.0;
 	
 	for(var i = 0; i < p.length; i++){
-		console.log(p[i]);
 		html += "<tr>";
 		html += "<td>" + p[i].produit.name + "</td>";
 		html += "<td>" + p[i].produit.price + "</td>";
