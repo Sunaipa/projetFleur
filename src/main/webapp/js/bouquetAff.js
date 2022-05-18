@@ -2,6 +2,7 @@ $(function() {
 	getBouquet();
 	getSaison();
 	getStyle();
+	$("#unite").hide();
 });
 
 function getBouquet() {
@@ -13,7 +14,7 @@ function afficherBouquet(bouquet){
 	bouquet.forEach(function(b) {
 		html += "<tr>";
 		html += "<td>" + b.id + "</td>";
-		html += "<td>" + b.name + "</td>";
+		html += "<td><button onclick='detailBouquet(" + b.id + ")' type='text' class=' btn btn-link'> " + b.name + "</button></td>";
 		html += "<td>" + b.price + "</td>";
 		html += "<td>" + b.quantity + "</td>";
 		html += "<td>" + b.season.name + "</td>";
@@ -44,5 +45,28 @@ function getStyle() {
 		});
 		$("#style").html(data);
 		});
+}
+
+function detailBouquet(id){
+	$.get("http://localhost:8080/56-projetfleur/rs/bouquet/" + id, function(b){
+		
+		$("#tableList").hide();
+		
+		$("#nameUnit").html(b.name);
+		$("#idUnite").val(id);
+		$("#info").html(b.info);
+		$("#tarif").html(b.price);
+		$("#couleur").html(b.color);
+		$("#saison").html(b.season.name);
+		$("#style").html(b.style.name);
+		$("#imgUnite").attr('src', b.img);
+		
+		$("#unite").show();
+		});
+}
+
+function retourList(){
+	$("#unite").hide();
+	$("#tableList").show();
 }
 

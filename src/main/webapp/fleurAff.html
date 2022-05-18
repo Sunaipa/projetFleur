@@ -9,7 +9,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="css/commun.css">
+<script src="./js/commun.js"></script>
 <script src="./js/fleurAff.js"></script>
+<script src="./js/panierAdd.js"></script>
 </head>
 
 <body>
@@ -41,14 +43,14 @@
 		          			</ul>
 		         		</div>
 			         </li>
-					<li><a href="panier.html">Panier <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+					<li><a href="panier.html">Panier <span class="glyphicon glyphicon-shopping-cart"></span><span id="nombreItem"></span></a></li>
 				</ul>s
 			</div>
 		</div>
 	</nav>
 
 
-	<div class="container">
+	<div id ="tableList" class="container">
 		<h1 class="bleu">
 			Liste des Fleurs :
 		</h1>
@@ -66,7 +68,41 @@
 			</tbody>
 		</table>
 	</div>
-
+	
+	<div id ="unite" class="container">
+		<h1 id="nameUnit"></h1>
+	    <button onclick='retourList()' type='button' class='glyphicon glyphicon-arrow-left'></button>
+	    <div class="row text-left">
+	        <div class="col-md-4">
+	            <img id="imgUnite" src="" width="100px">
+	        </div>
+	        <div class="col-md-8">
+	            <p id="info"></p>
+	            <p id="tarif"></p>
+	            <p id="couleur"></p>
+	            <p id="saison"></p>
+				<form class="form-horizontal row text-left">
+					<input id="idUnite" type = "hidden"> 
+					<div class="form-group col-md-3">			
+						<div class="col-xs-10">
+							<select class="form-control" id="quantityChoice">
+						      <option>1</option>
+						      <option>2</option>
+						      <option>3</option>
+						      <option>4</option>
+						      <option>5</option>
+						    </select>
+						</div>
+					</div>
+					<div class="form-group col-md-5" >
+						<div class="col-xs-offset-2 col-xs-2">
+							<button id="pEnvoyer" type="button" class="btn btn-primary">Ajouter au panier</button>			
+						</div>
+					</div>
+				</form>
+	        </div>
+	    </div>
+	</div>
 
 
 	<nav class="navbar navbar-default navbar-fixed-bottom">
