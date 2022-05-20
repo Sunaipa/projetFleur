@@ -56,7 +56,6 @@ function envoyer(){
 		$("#errorFleur").css("display", "block");
 		$("#errorFleur").html("Une erreur est survenue lors de l'ajout");
 	})
-	
 }
 
 function envoyerModif(){

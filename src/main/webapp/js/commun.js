@@ -8,7 +8,6 @@ $(function() {
 function includeNavBar(){
 	var id = $(".include-Nav").attr("name");
 	id = "#" + id;
-	console.log(id);
 	$(".include-Nav").load("./include/navBar.html", function(){
 		setActive(id);
 	});

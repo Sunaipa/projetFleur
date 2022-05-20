@@ -5,9 +5,6 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
-
-
-
 public class GenericDaoImpl<T, U> implements GenericDao<T, U>{
 
 	
@@ -65,6 +62,7 @@ public class GenericDaoImpl<T, U> implements GenericDao<T, U>{
 			throw e;
 		}
 	}
+	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public T findById(Class c , U id){
 		return (T) DAOUtil
@@ -89,9 +87,6 @@ public class GenericDaoImpl<T, U> implements GenericDao<T, U>{
 				.createQuery(req, c)
 				.getResultList();
 	}
-	
-	
-	
 
 	@Override
 	@SuppressWarnings({"rawtypes" })
@@ -108,7 +103,6 @@ public class GenericDaoImpl<T, U> implements GenericDao<T, U>{
 			e.printStackTrace();
 			et.rollback();
 		}
-		
 	}
 
 }

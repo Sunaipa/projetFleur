@@ -4,26 +4,28 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class User {
+public class Utilisateur {
 	
 	@Id
-	private String login;
+	private String name;
 	private String password;
 
-	public User() {
+	public Utilisateur() {
 	}
 
-	public User(String login, String password) {
-		this.login = login;
+	public Utilisateur(String name, String password) {
+		this.name = name;
 		this.password = password;
 	}
 
-	public String getLogin() {
-		return login;
+	
+
+	public String getName() {
+		return name;
 	}
 
-	public void setLogin(String login) {
-		this.login = login;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getPassword() {
@@ -36,7 +38,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [login=" + login + ", password=" + password + "]";
+		return "User [name=" + name + ", password=" + password + "]";
 	}
 
 }
