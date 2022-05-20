@@ -119,7 +119,6 @@ function modifForm(fleur) {
 	$("#saison").val(fleur.season.id);
 }
 
-
 function suppFleur(id){
 	$.ajax({
 		type : 'delete',
@@ -137,7 +136,6 @@ function suppFleur(id){
 function getSaison() {
 
 	$.get("http://localhost:8080/56-projetfleur/rs/saison/", function(saison){
-
 		var data = "";
 		saison.forEach(function(s){
 			data += "<option value="+s.id +">" + s.name + "</option>";
@@ -145,4 +143,4 @@ function getSaison() {
 		
 		$("#saison").html(data);
 		});
-	}
+}

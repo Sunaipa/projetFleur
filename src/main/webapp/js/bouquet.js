@@ -62,6 +62,7 @@ function envoyer(){
 }
 
 function envoyerModif(){
+	console.log($("#saison").val());
 	var data = {
 		name : $('#name').val(),
 		price:  $('#price').val(),
@@ -123,7 +124,7 @@ function modifForm(bouquet) {
 	
 	$("#saison").val(bouquet.season.id);
 	
-	$("#saison").val(bouquet.style.id);
+	$("#style").val(bouquet.style.id);
 }
 
 
@@ -142,14 +143,11 @@ function suppBouquet(id){
 }
 
 function getSaison() {
-
 	$.get("http://localhost:8080/56-projetfleur/rs/saison/", function(saison){
-
 		var data = "";
 		saison.forEach(function(s){
 			data += "<option value="+s.id +">" + s.name + "</option>";
 		});
-		
 		$("#saison").html(data);
 		});
 }
